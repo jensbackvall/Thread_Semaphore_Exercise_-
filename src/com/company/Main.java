@@ -35,7 +35,7 @@ public class Main {
         int spistKage = take;
         Cake kage = kager[take++];
 
-        System.out.println("Kage fra hyldeplads: " + spistKage + " blev spist");
+        System.out.println("Kage fra hyldeplads " + spistKage + " blev spist");
 
         for (int i = 0; i < (kager.length); i++) {
             if (kager[i] != null) {
@@ -74,11 +74,10 @@ public class Main {
 
         System.out.println("_______________________________");
 
-        put = put % kager.length;
+        put = put % kager.length; // cyklisk indexering: foo = foo % bar.length();
 
         hylde.release();
     }
 }
 
 
-// cyklisk indexering: x = x % bla.length();
