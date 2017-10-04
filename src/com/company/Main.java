@@ -19,23 +19,38 @@ public class Main {
         Consumer kunden = new Consumer();
         Thread kundensTraad = new Thread(kunden);
 
+        Consumer kunden2 = new Consumer();
+        Thread kunden2sTraad = new Thread(kunden2);
+
+        Consumer kunden3 = new Consumer();
+        Thread kunden3sTraad = new Thread(kunden3);
+
         bagerensTraad.start();
         kundensTraad.start();
+        kunden2sTraad.start();
+        kunden3sTraad.start();
 
     }
 
     public static Cake buyCake() {
 
-        try {
-            outerloop:
-            for (int j = take; j < kager.length; j++) {
-                if (kager[j] != null) {
+        outerloop:
+        for (int j = 0; j < kager.length; j++) {
+            if (kager[j] != null) {
+                try {
                     hylde.acquire();
-                    break outerloop;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+                break outerloop;
+            } else {
+               try {
+                   Thread.sleep(1000);
+                   j = 0;
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
 
         int spistKage = take;
@@ -62,17 +77,27 @@ public class Main {
     }
 
     public static void putCake(Cake cake) {
-        try {
-            outerloop:
-            for (int j = take; j < kager.length; j++) {
-                if (kager[j] == null) {
+
+        outerloop:
+        for (int j = 0; j < kager.length; j++) {
+            if (kager[j] == null) {
+                try {
                     hylde.acquire();
-                    break outerloop;
+                } catch (InterruptedException e) {
+                e.printStackTrace();
+                }
+                break outerloop;
+            } else {
+                try {
+                    Thread.sleep(1000);
+                    j = 0;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
+
+
 
         kager[put++] = cake;
 
