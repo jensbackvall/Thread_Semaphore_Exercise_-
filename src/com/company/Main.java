@@ -27,7 +27,13 @@ public class Main {
     public static Cake buyCake() {
 
         try {
-            hylde.acquire();
+            outerloop:
+            for (int j = take; j < kager.length; j++) {
+                if (kager[j] != null) {
+                    hylde.acquire();
+                    break outerloop;
+                }
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -36,6 +42,8 @@ public class Main {
         Cake kage = kager[take++];
 
         System.out.println("Kage fra hyldeplads " + spistKage + " blev spist");
+
+        kager[spistKage] = null;
 
         for (int i = 0; i < (kager.length); i++) {
             if (kager[i] != null) {
@@ -55,7 +63,13 @@ public class Main {
 
     public static void putCake(Cake cake) {
         try {
-            hylde.acquire();
+            outerloop:
+            for (int j = take; j < kager.length; j++) {
+                if (kager[j] == null) {
+                    hylde.acquire();
+                    break outerloop;
+                }
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
