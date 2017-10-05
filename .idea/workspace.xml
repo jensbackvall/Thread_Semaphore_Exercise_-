@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="992c5db9-7f13-4853-913e-d7728596f013" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Baker.java" afterPath="$PROJECT_DIR$/src/com/company/Baker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Consumer.java" afterPath="$PROJECT_DIR$/src/com/company/Consumer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="196" column="62" lean-forward="false" selection-start-line="196" selection-start-column="62" selection-end-line="196" selection-end-column="62" />
+            <state relative-caret-position="233">
+              <caret line="136" column="70" lean-forward="false" selection-start-line="136" selection-start-column="70" selection-end-line="136" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -86,8 +84,8 @@
         <option value="$PROJECT_DIR$/src/com/company/Total.java" />
         <option value="$PROJECT_DIR$/src/com/company/Cake.java" />
         <option value="$PROJECT_DIR$/src/com/company/Baker.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Consumer.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
       </list>
     </option>
   </component>
@@ -216,12 +214,12 @@
       <updated>1506933369581</updated>
       <workItem from="1506933372885" duration="2193000" />
       <workItem from="1506940100995" duration="553000" />
-      <workItem from="1507028242080" duration="15738000" />
+      <workItem from="1507028242080" duration="15873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18484000" />
+    <option name="totallyTimeSpent" value="18619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="61" width="1260" height="733" extended-state="0" />
@@ -235,7 +233,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -352,8 +350,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="196" column="62" lean-forward="false" selection-start-line="196" selection-start-column="62" selection-end-line="196" selection-end-column="62" />
+        <state relative-caret-position="233">
+          <caret line="136" column="70" lean-forward="false" selection-start-line="136" selection-start-column="70" selection-end-line="136" selection-end-column="70" />
           <folding />
         </state>
       </provider>

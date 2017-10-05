@@ -1,120 +1,5 @@
 package com.company;
 
-/*import java.util.concurrent.Semaphore;
-
-public class Main {
-    public static Cake[] kager = new Cake[10];
-    private static Semaphore hylde = new Semaphore(1);
-    public static int take, put = 0;
-
-    public static void main(String[] args) throws InterruptedException {
-
-        for (int i = 0; i < kager.length; i++) {
-            kager[i] = null;
-        }
-
-        Baker bageren = new Baker();
-        Thread bagerensTraad = new Thread(bageren);
-
-        Consumer kunden = new Consumer();
-        Thread kundensTraad = new Thread(kunden);
-
-        bagerensTraad.start();
-        kundensTraad.start();
-
-    }
-
-    public static Cake buyCake() {
-
-        outerloop:
-        for (int k = 0; k < kager.length; k++) {
-            if (kager[k] != null) {
-                try {
-                    hylde.acquire();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("BREAKING!!!!!");
-                break outerloop;
-            } else {
-               try {
-                   k = 0;
-                   System.out.println("Consumer SLEEPS!");
-                   Thread.sleep(100);
-               } catch (InterruptedException e) {
-                   e.printStackTrace();
-               }
-            }
-        }
-
-        int spistKage = take;
-        Cake kage = kager[take++];
-
-        System.out.println("Kage fra hyldeplads " + spistKage + " blev spist");
-
-        kager[spistKage] = null;
-
-        for (int i = 0; i < (kager.length); i++) {
-            if (kager[i] != null) {
-                System.out.println("hyldeplads nummer " + i + " har en " + kager[i].getName());
-            } else {
-                System.out.println("hyldeplads nummer " + i + " har IKKE en kage");
-            }
-        }
-
-        System.out.println("_______________________________");
-
-        take = take % kager.length;
-
-        hylde.release();
-        return kage;
-    }
-
-    public static void putCake(Cake cake) {
-
-        outerloop:
-        for (int j = 0; j < kager.length; j++) {
-            if (kager[j] == null) {
-                try {
-                    hylde.acquire();
-                } catch (InterruptedException e) {
-                e.printStackTrace();
-                }
-                System.out.println("BREAKING!!!!!");
-                break outerloop;
-            } else {
-                try {
-                    j = 0;
-                    System.out.println("Baker SLEEPS!");
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-
-
-        kager[put++] = cake;
-
-        System.out.println(cake.getName() + " blev sat på hylde nummer: " + (put - 1));
-
-        for (int i = 0; i < (kager.length); i++) {
-            if (kager[i] != null) {
-                System.out.println("hyldeplads nummer " + i + " har en " + kager[i].getName());
-            } else {
-                System.out.println("hyldeplads nummer " + i + " har IKKE en kage");
-            }
-        }
-
-        System.out.println("_______________________________");
-
-        put = put % kager.length; // cyklisk indexering: foo = foo % bar.length();
-
-        hylde.release();
-    }
-}*/
-
 import java.util.concurrent.Semaphore;
 
 public class Main {
@@ -247,3 +132,121 @@ public class Main {
     }
 }
 
+
+/*
+OLD VERSION THAT DID NOT WORK. INCLUDED TO LET ME LEARN AND THINK MORE
+
+import java.util.concurrent.Semaphore;
+
+public class Main {
+    public static Cake[] kager = new Cake[10];
+    private static Semaphore hylde = new Semaphore(1);
+    public static int take, put = 0;
+
+    public static void main(String[] args) throws InterruptedException {
+
+        for (int i = 0; i < kager.length; i++) {
+            kager[i] = null;
+        }
+
+        Baker bageren = new Baker();
+        Thread bagerensTraad = new Thread(bageren);
+
+        Consumer kunden = new Consumer();
+        Thread kundensTraad = new Thread(kunden);
+
+        bagerensTraad.start();
+        kundensTraad.start();
+
+    }
+
+    public static Cake buyCake() {
+
+        outerloop:
+        for (int k = 0; k < kager.length; k++) {
+            if (kager[k] != null) {
+                try {
+                    hylde.acquire();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("BREAKING!!!!!");
+                break outerloop;
+            } else {
+               try {
+                   k = 0;
+                   System.out.println("Consumer SLEEPS!");
+                   Thread.sleep(100);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+            }
+        }
+
+        int spistKage = take;
+        Cake kage = kager[take++];
+
+        System.out.println("Kage fra hyldeplads " + spistKage + " blev spist");
+
+        kager[spistKage] = null;
+
+        for (int i = 0; i < (kager.length); i++) {
+            if (kager[i] != null) {
+                System.out.println("hyldeplads nummer " + i + " har en " + kager[i].getName());
+            } else {
+                System.out.println("hyldeplads nummer " + i + " har IKKE en kage");
+            }
+        }
+
+        System.out.println("_______________________________");
+
+        take = take % kager.length;
+
+        hylde.release();
+        return kage;
+    }
+
+    public static void putCake(Cake cake) {
+
+        outerloop:
+        for (int j = 0; j < kager.length; j++) {
+            if (kager[j] == null) {
+                try {
+                    hylde.acquire();
+                } catch (InterruptedException e) {
+                e.printStackTrace();
+                }
+                System.out.println("BREAKING!!!!!");
+                break outerloop;
+            } else {
+                try {
+                    j = 0;
+                    System.out.println("Baker SLEEPS!");
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+
+        kager[put++] = cake;
+
+        System.out.println(cake.getName() + " blev sat på hylde nummer: " + (put - 1));
+
+        for (int i = 0; i < (kager.length); i++) {
+            if (kager[i] != null) {
+                System.out.println("hyldeplads nummer " + i + " har en " + kager[i].getName());
+            } else {
+                System.out.println("hyldeplads nummer " + i + " har IKKE en kage");
+            }
+        }
+
+        System.out.println("_______________________________");
+
+        put = put % kager.length; // cyklisk indexering: foo = foo % bar.length();
+
+        hylde.release();
+    }
+}*/
