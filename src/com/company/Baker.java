@@ -31,7 +31,7 @@ public class Baker extends Thread {
         }
 
         try {
-            Thread.sleep(200);
+            Thread.sleep(10);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
