@@ -65,6 +65,7 @@ public class Main {
             return;
         }
 
+        /* take bliver inkrementeret med 1, for at få hyldepladser fra 1 - 10 i stedet for 0 - 9 */
         System.out.println("Kunde køber kagen på hyldeplads " + (take + 1));
         System.out.println("Kage fra hyldeplads " + (take + 1) + " blev spist");
 
@@ -115,14 +116,15 @@ public class Main {
         kager[put] = cake;
 
         System.out.println("Bager bager en " + cake.getName());
-        System.out.println(cake.getName() + " blev sat på hylde nummer: " + (put+1));
+        /* put bliver inkrementeret med 1, for at få hyldepladser fra 1 - 10 i stedet for 0 - 9 */
+        System.out.println(cake.getName() + " blev sat på hylde nummer: " + (put + 1));
 
         /* gennemgår alle hyldepladser og angiver hvis der er en kage og hvilken type det er*/
         for (int i = 0; i < (kager.length); i++) {
             if (kager[i] != null) {
-                System.out.println("hyldeplads nummer " + (i+1) + " har en " + kager[i].getName());
+                System.out.println("hyldeplads nummer " + (i + 1) + " har en " + kager[i].getName());
             } else {
-                System.out.println("hyldeplads nummer " + (i+1) + ": _______ TOM HYLDE _______");
+                System.out.println("hyldeplads nummer " + (i + 1) + ": _______ TOM HYLDE _______");
             }
         }
         System.out.println("_______________________________");
@@ -134,7 +136,7 @@ public class Main {
 
 
 /*
-OLD VERSION THAT DID NOT WORK. INCLUDED TO LET ME LEARN AND THINK MORE
+OLD VERSION THAT DID NOT WORK. INCLUDED TO LET ME REMEMBER, LEARN AND THINK MORE
 
 import java.util.concurrent.Semaphore;
 
