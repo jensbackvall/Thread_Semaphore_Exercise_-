@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        /* sikre at kager er fyldt med null objekter*/
+        /* sikre at kager er "fyldt" med tomme null-objekter*/
         for (int i = 0; i < kager.length; i++) {
             kager[i] = null;
         }
