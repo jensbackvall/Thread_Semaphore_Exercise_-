@@ -11,11 +11,6 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        /* sikre at kager er "fyldt" med tomme null-objekter*/
-        for (int i = 0; i < kager.length; i++) {
-            kager[i] = null;
-        }
-
         /* Initierer en ny instans af bager med tilhørende thread*/
         Baker bageren = new Baker();
         Thread bagerensTraad = new Thread(bageren);
